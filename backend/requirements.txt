@@ -1,7 +1,9 @@
 flask
 flask-socketio
+flask-cors
 eventlet
 numpy
-# soundfile
 openai-whisper
 torch
+python-dotenv
+google-cloud-speech
