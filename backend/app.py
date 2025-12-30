@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 load_dotenv()
-
+import os
 from flask import Flask
 from flask_socketio import SocketIO
 from flask_cors import CORS
@@ -14,12 +14,14 @@ from models.db import transcript_collection
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 socketio = SocketIO(
     app,
-    cors_allowed_origins="*",
-    async_mode="threading",
+    cors_allowed_origins="*",   
+    async_mode="threading",     
+    ping_timeout=60,
+    ping_interval=25,
 )
 
 stt_worker = GoogleSTTWorker(socketio)
@@ -151,7 +153,7 @@ def load_transcript(data):
             "message": "Failed to load transcript"
         })
 if __name__ == "__main__":
-    import os
+  
 
     port = int(os.environ.get("PORT", 5000))
 
