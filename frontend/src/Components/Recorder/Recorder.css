@@ -1,0 +1,333 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0f1117;
+}
+
+
+/* PAGE */
+.recorder-page {
+  min-height: 100vh;
+  padding: 40px 60px;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e5e7eb;
+  font-family: system-ui, sans-serif;
+}
+
+/* TITLE */
+.recorder-title {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+/* STATUS BAR */
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 18px 0 28px;
+}
+
+/* RECORDING STATUS */
+.status-recording {
+  color: #ef4444;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.status-idle {
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+/* BIG TIMER */
+.timer {
+  font-size: 26px;
+  font-weight: 700;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.15);
+  padding: 12px 20px;
+  border-radius: 14px;
+  letter-spacing: 1px;
+}
+
+/* PULSE WHEN RECORDING */
+.status-recording + .timer {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(34,197,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+}
+
+/* CONTROLS */
+.controls {
+  margin-bottom: 24px;
+}
+
+.btn-start,
+.btn-stop {
+  padding: 10px 26px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-start {
+  background: #22c55e;
+  color: #020617;
+}
+
+.btn-stop {
+  background: #ef4444;
+  color: white;
+}
+
+/* ERROR */
+.error {
+  color: #f87171;
+  margin-bottom: 12px;
+}
+
+/* TRANSCRIPT BOXES */
+.transcript-box {
+  background: #1e293b;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.box-title {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.live-text,
+.final-text {
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+.live-text {
+  max-height: 180px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  scrollbar-width: thin;
+}
+
+
+.recorder-page {
+  min-height: 100vh;
+  background: #0f1117;
+  color: #e5e7eb;
+  padding: 40px;
+}
+
+.recorder-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.timer {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.status-recording {
+  color: #ef4444;
+}
+
+.status-idle {
+  color: #9ca3af;
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn-start,
+.btn-stop {
+  padding: 12px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-start {
+  background: #22c55e;
+}
+
+.btn-stop {
+  background: #ef4444;
+}
+
+.audio-player {
+  width: 100%;
+  margin: 15px 0;
+}
+
+.transcript-box {
+  background: #111827;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.word-preview {
+  line-height: 2;
+  font-size: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.word {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.word-chip {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.word-chip:hover {
+  background: #444;
+}
+
+.placeholder {
+  color: #6b7280;
+}
+.audio-player {
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.active-word {
+  background: #22c55e;
+  color: black;
+  font-weight: bold;
+}
+
+.edit-box textarea {
+  width: 100%;
+  min-height: 80px;
+  background: #111;
+  color: white;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+
+.alert {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.alert.success {
+  background: #0f5132;
+  color: #d1e7dd;
+}
+
+.alert.error {
+  background: #842029;
+  color: #f8d7da;
+}
+
+.save-box {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.btn-save-db {
+  background: #0d6efd;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-save-db:hover {
+  background: #084298;
+}
+
+.load-box {
+  display: flex;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.load-box input {
+  flex: 1;
+  padding: 8px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: white;
+  border-radius: 6px;
+}
+
+.btn-load {
+  padding: 8px 14px;
+  background: #2563eb;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.editor-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.editor-toolbar button {
+  padding: 6px 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.rich-editor {
+  min-height: 120px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.rich-editor b {
+  font-weight: bold;
+}
+
+.rich-editor i {
+  font-style: italic;
+}
+
+.rich-editor u {
+  text-decoration: underline;
+}
+
